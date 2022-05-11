@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP || TEST1</title>
+    
+    
+    <style>
+        .class1{
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+        }
+        
+        .class2{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(106, 42, 165);
+        }
+    </style>
+<body>
+    <div class="class1"></div>
+    <div class="class2"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script>
+        let tween1 = gsap.to(".class1", {
+            x:100,
+            id: "example",
+            scrollTrigger: ".trigger"
+            });
+
+        //console.log(ScrollTrigger.getById("example").animation); // tween
+
+        let tween2 = gsap.to(".class2", {x:100}),
+            st = ScrollTrigger.create({
+                trigger: ".trigger",
+                start: "top center",
+                end: "+=500",
+                animation: tween
+            });
+
+        //console.log(st.animation); // tween
+    </script>
+</body>
+</html>
