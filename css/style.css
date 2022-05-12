@@ -1,0 +1,287 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+ul, li, ol{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+body{
+    background-color: black;
+}
+
+.navbar{
+    padding-top: 2vw;
+    padding-right: 3vw;
+    padding-bottom: 2vw;
+    padding-left: 3vw;
+}
+
+.navbar-toggler-icon{
+    display: none;
+}
+
+.navbar-dark .navbar-toggler-icon{
+    background: none;
+}
+
+.navbar-collapse{
+    flex-grow: inherit;
+}
+
+.navbar-nav .nav-item{
+    margin-left: 3vw;
+    position: relative;
+}
+
+.navbar-nav .nav-item .nav-link{
+    color: white;
+}
+
+.navbar-nav .nav-item::after{
+    content: "";
+    width: 1px;
+    height: 1em;
+    background-color: white;
+    position: absolute;
+    top: 12px;
+    right: -1.5vw;
+}
+
+.navbar-nav .nav-item:last-child:after{
+    content: none;
+}
+
+.hero__block{
+    padding-top: 10vw;
+    padding-right: 3vw;
+    padding-bottom: 3vw;
+    padding-left: 18vw;
+    box-sizing: border-box;
+    position: relative;
+
+    height: 47vw;
+    color: white;
+}
+
+.hero__block .swiper-container{
+    height: 100%;
+}
+
+.swiper-container{
+    overflow: hidden;
+    z-index: 1;
+}
+
+.slice img{
+    width: 100%;
+}
+
+.title__block{
+    text-transform: uppercase;
+    position: absolute;
+    left: 5vw;
+    bottom: 6vw;
+    font-weight: bolder;
+    line-height: 1;
+}
+
+.title__block .case{
+    margin-bottom: 0.5em;
+}
+
+.title__block .title{
+    font-size: 6em;
+}
+
+.title__block .info{
+    margin-top: 3em;
+    margin-bottom: 1em;
+    font-size: 1em;
+}
+
+.pager{
+    position: absolute;
+    left: 5vw;
+    bottom: 3vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10vw;
+}
+
+.pager__bar{
+    width: 100%;
+    height: 1px;
+    margin: 0 0.5vw;
+    background-color: white;
+}
+
+.about__block,
+.works_all__block{
+    color: white;
+    font-size: 10em;
+    text-transform: uppercase;
+    padding: 10vw 0;
+    box-sizing: border-box;
+}
+
+.works__block a{
+    color: white;
+    text-decoration: none;
+}
+
+.works__block .row>*{
+    padding-right: 3em;
+    padding-left: 3em;
+}
+
+.works__block .ph picture,
+.works__block .ph img{
+    width: 100%;
+}
+
+.tx__block{
+    text-transform: uppercase;
+    font-weight: bolder;
+    word-break: break-all;
+    line-height: 1;
+    margin-top: 2em;
+}
+
+.tx__block .case{
+    margin-bottom: 0.5em;
+}
+
+.tx__block .title{
+    font-size: 3em;
+}
+
+.tx__block .info{
+    margin-top: 2em;
+    font-size: 1em;
+    text-align: justify;
+    line-height: 1.5;
+    font-size: 0.5em;
+    font-weight: initial;
+}
+
+.nav__menu__block{
+    padding: 5vw;
+    font-weight: bolder;
+    font-size: 10em;
+    color: white;
+    line-height: 1;
+}
+
+.nav__menu__block a{
+    color: white;
+    text-decoration: none;
+}
+
+.nav__menu__block a:hover{
+    color: #444;
+}
+
+.footer__block{
+    padding-left: 5vw;
+}
+
+.footer__block a,
+.footer__block p{
+    color: white;
+    display: inline-block;
+    margin-right: 1vw;
+    text-decoration: none;
+    font-size: 0.5em;
+}
+
+@media only screen and (max-width: 834px) {
+    .navbar-toggler-icon{
+        display: block;
+    }
+
+    .navbar{
+        padding-right: 2vw;
+    }
+
+    .hero__block{
+        padding-top: 20vw;
+        padding-right: 5vw;
+        padding-bottom: 10vw;
+        padding-left: 5vw;
+        position: relative;
+        
+        width: 100vw;
+        height: 100%;
+        color: white;
+    }
+
+    .swiper-container{
+        width: 100%;
+    }
+
+    .slice{
+        margin-bottom: 5vw;
+    }
+
+    .title__block{
+        position: static;
+    }
+
+    .title__block .case{
+    }
+    
+    .title__block .title{
+        font-size: 4em;
+        width: 100%;
+        word-break: break-all;
+    }
+    
+    .title__block .info{
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+
+    .works__block .row>*{
+        padding-right: 5vw;
+        padding-left: 5vw;
+    }
+
+    .works__block .works__inview{
+        margin-bottom: 25vw;
+    }
+
+    .wrapper{
+        width: 100%;
+        display: block;
+        overflow-x: hidden;
+    }
+
+    .about__block,
+    .works_all__block{
+        font-size: 8em;
+        line-height: 1;
+        padding-top: 50vw;
+        padding-bottom: 50vw;
+    }
+
+    .nav__menu__block{
+        padding: 0vw 5vw 40vw 5vw;
+        font-weight: bolder;
+        font-size: 3em;
+        color: white;
+        line-height: 1.25;
+    }
+
+    .nav__menu__block span{
+        display: none;
+    }
+
+    .footer__block{
+        padding-left: 0;
+    }
+}

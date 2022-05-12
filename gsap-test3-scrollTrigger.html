@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSAP</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+    <style>
+        body{
+            background-color: rgb(172, 172, 172);
+            height: 400vh;
+        }
+
+        .box{
+            font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            position: absolute;
+        }
+
+        .a{background-color: cadetblue; top: 300px;}
+        .b{background-color: blueviolet; top: 600px;}
+        .c{background-color: chartreuse; top: 900px;}
+        .d{background-color: rgb(255, 0, 123); top: 1200px;}
+        .e{background-color: rgb(38, 197, 255); top: 1500px;}
+        .f{background-color: rgb(233, 255, 38); top: 1800px;}
+        .g{background-color: rgb(85, 38, 255); top: 2100px;}
+        .ghost{background-color: rgba(122, 122, 122, 0.5); top: 2100px;}
+        .h{background-color: rgb(214, 50, 50); top: 2400px;}
+    </style>
+</head>
+<body>
+    <div class="box a">a</div>
+    <div class="box b">b</div>
+    <div class="box c">c</div>
+    <div class="box d">d</div>
+    <div class="box e">e</div>
+    <div class="box f">f</div>
+    <div class="box g">g</div>
+    <div class="box ghost">g</div>
+    <div class="box h">h</div>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.to(".a",{
+            x: 400,
+            rotation: 360,
+            duration: 3
+        });
+
+        gsap.to(".b",{
+            scrollTrigger: ".b",
+            x: 400,
+            rotation: 360,
+            duration: 3
+        });
+
+        gsap.to(".c",{
+            scrollTrigger: {
+                trigger: ".c",
+                toggleActions: "restart pause reverse pause"
+            },
+            x: 400,
+            rotation: 360,
+            duration: 3
+        });
+
+        gsap.to(".d",{
+            scrollTrigger: {
+                trigger: ".d",
+                start: "20px 80%",
+                end: "+=300",
+                markers: "true",
+                toggleActions: "restart pause reverse pause"
+            },
+            x: 400,
+            rotation: 360,
+            duration: 3
+        });
+
+        // gsap.to(".e",{
+        //     scrollTrigger: {
+        //         trigger: ".e",
+        //         start: "center center",
+        //         end: () => "+=" + 
+        //         document.querySelector(".e").offsetWidth,
+        //         markers: "true",
+        //         toggleActions: "restart pause reverse pause"
+        //     },
+        //     x: 400,
+        //     rotation: 360,
+        //     duration: 3
+        // });
+
+        gsap.to(".e",{
+            scrollTrigger: {
+                trigger: ".d",
+                start: "top 50px",
+                endTrigger: ".f",
+                end: "bottom 80%", 
+                scrub: "true",
+                markers: "true"
+            },
+            x: 400,
+            rotation: 360,
+            duration: 3
+        });
+
+        gsap.to(".g",{
+            scrollTrigger: {
+                trigger: ".g",
+                start: "top center",
+                end: "top 100px", 
+                scrub: 3,
+                markers: "true"
+            },
+            x: 400,
+            rotation: 360,
+            ease: "none",
+            duration: 3
+        });
+
+        gsap.to(".ghost",{
+            scrollTrigger: {
+                trigger: ".g",
+                start: "top center",
+                end: "top 100px", 
+                scrub: "true",
+                markers: "true"
+            },
+            x: 400,
+            rotation: 360,
+            ease: "none",
+            duration: 3
+        });
+
+        let tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ".h",
+                start: "top center",
+                end: "top 100px",
+                scrub: 3,
+                pin: ".ghost",
+                markers: true
+            }
+        });
+
+        tl.to(".h",{
+            x: 400,
+            rotation: 360,
+            ease: "none",
+            duration: 3
+        });
+    </script>
+</body>
+</html>
